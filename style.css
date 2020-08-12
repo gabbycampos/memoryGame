@@ -1,0 +1,41 @@
+#game div {
+  border: 1px solid black;
+  width: 15%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+}
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+h1 {
+  background-color: #f3ec78;
+  background-image: linear-gradient(#330870 0%, #30cfd0 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+section {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+  color: #330870;
+  font-size: 18px;
+}
+.btn {
+  width: 5.5rem;
+  font-size: 18px;
+  color: white;
+  background-image: linear-gradient(#330870 0%, #30cfd0 100%);
+}
