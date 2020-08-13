@@ -14,7 +14,7 @@ const COLORS = [
 let hasFlippedCard = false; // to know which card
 let firstCard;
 let secondCard;
-let lockBoard = false;
+let lockBoard = false; // so we won't click too quickly
 clickCounter = 0;
 cardsFlipped = 0;
 let restartButton = document.querySelector('.btn');
@@ -62,11 +62,15 @@ function createDivsForColors(colorArray) {
 
 // TODO: Implement this function!
 function handleCardClick(event) {
+  if (lockBoard) {
+    return;
+  }
   clickCounter++;
   //clicks.innerHTML = clickCounter;
   clicks.innerText = clickCounter;
   //console.log("you just clicked", target);
   event.target.classList.add('flip');
+
   let target = event.target;
   target.style.backgroundColor = target.classList[0];
 
@@ -74,10 +78,8 @@ function handleCardClick(event) {
   //console.log(cardClass)
   //console.log(target)
 
+
   if (!hasFlippedCard) {
-    if (lockBoard) {
-      return;
-    }
     firstCard = firstCard || target;
     secondCard = target === firstCard ? null : target;
   }
@@ -108,7 +110,7 @@ function handleCardClick(event) {
   }
   if (cardsFlipped === COLORS.length) {
     score.innerHTML = clickCounter;
-    setTimeout(function() {
+    setTimeout(function () {
       alert('All Matched!');
     }, 1000)
   }
